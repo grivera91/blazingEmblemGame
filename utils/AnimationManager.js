@@ -8,7 +8,7 @@ const AnimationManager = {
       }
     }
 
-    // 🎮 Player
+    //Player
     safeCreate({
       key: 'player_idl',
       frames: anims.generateFrameNumbers('player_idl', { start: 0, end: 2 }),
@@ -48,7 +48,7 @@ const AnimationManager = {
       repeat: -1
     });
 
-    // ⚔️ Héctor
+    //Héctor
     safeCreate({
       key: 'hector_normal_attack',
       frames: anims.generateFrameNumbers('hector_normal_attack', { start: 0, end: 23 }),
@@ -86,7 +86,7 @@ const AnimationManager = {
       repeat: 0
     });
 
-    // 🔥 Serra
+    //Serra
     safeCreate({
       key: 'serra_fire_attack',
       frames: anims.generateFrameNumbers('serra_fire_attack', { start: 0, end: 8 }),
@@ -124,7 +124,7 @@ const AnimationManager = {
       repeat: 0
     });
 
-    // 💥 Animaciones de impacto
+    //Animaciones de impacto
     safeCreate({
       key: 'enemy_normal_attack',
       frames: anims.generateFrameNumbers('enemy_normal_attack', { start: 0, end: 11 }),

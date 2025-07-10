@@ -12,7 +12,7 @@ export default class BackgroundScene extends Phaser.Scene {
   }
 
   playMusic(key) {
-    if (this.currentKey === key) return; // Ya está sonando
+    if (this.currentKey === key) return;
 
     // Detener música anterior
     if (this.music) {

@@ -26,7 +26,7 @@ export default class MapScene extends Phaser.Scene {
     const fondoLeft = centerX - (mapaTexture.width * scale) / 2;
     const fondoTop = centerY - (mapaTexture.height * scale) / 2;
 
-    // 🧍 Posición del jugador
+    // Posición del jugador
     const playerX = data?.fromBattle && data.victory ? data.lastPlayerX : fondoLeft + 32;
     const playerY = data?.fromBattle && data.victory ? data.lastPlayerY : fondoTop + 32;
 
@@ -37,7 +37,7 @@ export default class MapScene extends Phaser.Scene {
 
     this.player.play('player_idl');
 
-    // 🧟 Mostrar enemigo solo si no fue victoria
+    // Mostrar enemigo solo si no fue victoria
     const showEnemy = !(data?.fromBattle && data.victory);
 
     if (showEnemy) {
@@ -54,7 +54,7 @@ export default class MapScene extends Phaser.Scene {
       });
     }
 
-    // 🎮 Controles
+    // Controles
     this.cursors = this.input.keyboard.createCursorKeys();
 
     const centerYText = centerY + 120;

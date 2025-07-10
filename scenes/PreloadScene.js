@@ -89,8 +89,7 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.audio('map_music', 'assets/audio/music/map_music.mp3');
   }
 
-  create() {
-    // Filtro NEAREST para pixel-art
+  create() {    
     [
       'hector', 'serra', 'enemigo', 
       'hector_normal_attack', 'hector_strong_attack', 'hector_distant_attack', 'hector_special_attack', 'hector_transition', 'hector_cast',
@@ -101,7 +100,6 @@ export default class PreloadScene extends Phaser.Scene {
     ]
     .forEach(key => this.textures.get(key)?.setFilter(Phaser.Textures.FilterMode.NEAREST));
 
-    // Al terminar de cargar, pasar a la siguiente escena
     this.scene.start('SplashScene');
   }
 }

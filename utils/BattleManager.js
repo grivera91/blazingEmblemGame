@@ -40,7 +40,7 @@ const BattleManager = {
     if (this.bothAttacked()) {
       this.updateTurnLabel(true); // turno enemigo
 
-      // 🔒 Oculta el botón durante el turno del enemigo
+      //Oculta el botón durante el turno del enemigo
       this.scene.recordButtonGroup?.setVisible(false);
 
       this.scene.time.delayedCall(1000, () => {
@@ -48,7 +48,7 @@ const BattleManager = {
           this.resetTurnFlags();
           this.updateTurnLabel(false);
 
-          // ✅ Reactiva el botón tras el turno del enemigo
+          //Reactiva el botón tras el turno del enemigo
           this.scene.recordButtonGroup?.setVisible(true);
           this.scene.enableRecordButton?.();
         });

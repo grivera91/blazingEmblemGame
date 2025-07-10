@@ -80,7 +80,7 @@ const VoiceManager = {
         
           scene.time.delayedCall(2000, () => {
             errorText.destroy();
-            AttackWindowManager.hide(); // ✅ ahora sí se ejecuta correctamente
+            AttackWindowManager.hide(); 
             scene.recordButtonGroup?.setVisible(true);
             scene.enableRecordButton?.();
           });

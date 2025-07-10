@@ -7,7 +7,7 @@ export default class SplashScene extends Phaser.Scene {
     const centerX = this.cameras.main.centerX;
     const centerY = this.cameras.main.centerY;
 
-    // 🖼️ Mostrar el logo (centrado y arriba del texto)
+    // Mostrar el logo (centrado y arriba del texto)
     const logo = this.add.image(centerX, centerY - 200, 'logo');
     
     // Escalar si es muy grande (opcional)
@@ -18,7 +18,7 @@ export default class SplashScene extends Phaser.Scene {
     const scale = Math.min(scaleX, scaleY, 1); // máximo 1: no agranda si es más chico
     logo.setScale(scale).setOrigin(0.5);
 
-    // 📝 Textos informativos
+    //Textos informativos
     this.add.text(centerX, centerY - 50, 'Diseño y desarrollo de juegos interactivos II', {
       fontSize: '50px',
       color: '#ffffff',
@@ -40,7 +40,7 @@ export default class SplashScene extends Phaser.Scene {
       align: 'center'
     }).setOrigin(0.5);
 
-    // 🎮 Iniciar con ENTER
+    //Iniciar con ENTER
     this.input.keyboard.on('keydown-ENTER', () => this.scene.start('MenuScene'));
   }
 }

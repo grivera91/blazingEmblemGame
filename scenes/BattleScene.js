@@ -23,7 +23,7 @@ export default class BattleScene extends Phaser.Scene {
     const fondo = this.add.image(centerX, centerY, 'fondo');
     fondo.setScale(Math.max(this.sys.game.config.width / fondo.width, this.sys.game.config.height / fondo.height)).setScrollFactor(0);
 
-    // 🧍 Sprites
+    //Sprites
     this.hector = this.add.sprite(centerX + 400, centerY - 150, 'hector').setScale(5);
     this.serra = this.add.sprite(centerX + 400, centerY + 50, 'serra').setScale(5);
     this.enemigo = this.add.sprite(centerX - 400, centerY - 50, 'enemigo').setScale(5);
@@ -37,7 +37,7 @@ export default class BattleScene extends Phaser.Scene {
     this.attackSprite = this.add.sprite(centerX, centerY, 'hector_attack').setVisible(false).setScale(6);
     this.hitEffect = this.add.sprite(this.enemigo.x + 150, this.enemigo.y, 'normal_hit').setVisible(false).setScale(5);
 
-    // 💖 Vidas iniciales
+    //Vidas iniciales
     this.hectorHP = 100;
     this.serraHP = 100;
     this.enemigoHP = 100;
@@ -45,10 +45,10 @@ export default class BattleScene extends Phaser.Scene {
 
     this.createRecordButton();
 
-    // 🔁 Iniciar combate
+    // Iniciar combate
     BattleManager.start(this);
 
-    // 🎤 Evento tras detectar género y obtener datos del ataque
+    //Evento tras detectar género y obtener datos del ataque
     VoiceManager.onGenderDetected = (scene, blob, gender) => {
       let animationDone = false;
       let battleData = null;
@@ -125,13 +125,13 @@ export default class BattleScene extends Phaser.Scene {
     circle.on('pointerdown', () => {
       this.disableRecordButton(circle, label, pulse);
 
-      // 🔇 Pausar toda la música durante la grabación
+      //Pausar toda la música durante la grabación
       this.sound.pauseAll();
 
-      // Iniciar grabación
+      //Iniciar grabación
       VoiceManager.startRecording(this);
 
-      // 🧠 Asegurar reanudación al terminar
+      //Asegurar reanudación al terminar
       VoiceManager.onResultReceived = () => {
         this.sound.resumeAll();
       };

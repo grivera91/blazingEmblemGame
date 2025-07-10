@@ -78,7 +78,7 @@ const AttackWindowManager = {
     this.clear();
     this.show();
   
-    // 🆕 Mostrar nombre del ataque centrado debajo del HUD
+    //Mostrar nombre del ataque centrado debajo del HUD
     const attackText = scene.add.text(0, 180, attack_name, {
       fontSize: '32px',
       fontFamily: 'Arial',
