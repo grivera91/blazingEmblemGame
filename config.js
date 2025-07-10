@@ -5,8 +5,10 @@ import MapScene from './scenes/MapScene.js';
 import BattleScene from './scenes/BattleScene.js';
 import BackgroundScene from './scenes/BackgroundScene.js';
 
-const isLocal = location.hostname === 'localhost';
+let isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 // isLocal = false; //Descomentar para apuntar al api aloajda desde local
+
+console.log('🌐 Ejecutando en', isLocal ? 'LOCAL' : 'PRODUCCIÓN');
 
 const API_BASE_URL = isLocal
   ? 'http://localhost:5274/api'
