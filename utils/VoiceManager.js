@@ -1,4 +1,5 @@
 import AttackWindowManager from './AttackWindowManager.js';
+import { API_BASE_URL } from '../config.js';
 
 const VoiceManager = {
   onGenderDetected: null,
@@ -26,9 +27,8 @@ const VoiceManager = {
   detectGender(blob, scene) {
     const formData = new FormData();
     formData.append('file', blob, 'audio.wav');
-
-    // fetch('http://localhost:5274/api/GenderDetector', {
-    fetch(' https://blazingemblemapi.onrender.com/api/GenderDetector', {
+    
+    fetch(`${API_BASE_URL}/GenderDetector`, {
       method: 'POST',
       body: formData
     })
@@ -57,9 +57,8 @@ const VoiceManager = {
     const formData = new FormData();
     formData.append('file', blob, 'audio.wav');
     formData.append('gender', gender);
-
-    // fetch('http://localhost:5274/api/Battle', {
-    fetch(' https://blazingemblemapi.onrender.com/api/Battle', {
+    
+    fetch(`${API_BASE_URL}/Battle`, {
       method: 'POST',
       body: formData
     })
